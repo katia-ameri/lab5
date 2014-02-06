@@ -10,7 +10,25 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	$(".friends a").click(projectClick);
 }
+
+
+// My attempt of a listener 
+
+
+function projectClick(e) { 
+
+    console.log("Project clicked");
+    // prevent the page from reloading      
+    e.preventDefault();
+    // In an event listener, $(this) is the leement that fired the event
+   var name = $(this).text();
+   var name2 = anagrammedName(name);
+   $(this).text(name2);
+   }
+
+
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
